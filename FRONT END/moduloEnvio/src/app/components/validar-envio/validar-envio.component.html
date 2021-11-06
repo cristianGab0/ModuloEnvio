@@ -1,0 +1,159 @@
+<mat-card>
+    <div class="border-bottom">
+        <div class="row" style="margin-bottom: 1vw;">
+            <div class="card" style="width: 10%; justify-content: center;">
+
+                <svg style="color: darkolivegreen;" xmlns="http://www.w3.org/2000/svg" width="100%" height="60%"
+                    fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+            </div>
+            <div style="width: 60%; margin-left: 2vw;  position: relative; display: flex; flex-direction: column;">
+                <span style="color: teal; font-size: 1vw; margin-top: 0.5vw; font-weight: bold;">COD_ENVIO:
+                  <span style="color: #000; font-size: 1vw; margin-top: 0.5vw; font-weight: lighter;">{{envio?.idenvio}}</span>
+                </span>
+
+                <span style=" font-size: 0.8vw; margin-top: 0.3vw;">Ref. cliente:</span>
+                <span style=" font-size: 0.8vw; margin-top: 0.3vw;">
+                    Tercero:
+                    <span style="color: teal; font-size: 0.8vw; margin-top: 0.3vw;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-phone" viewBox="0 0 16 16">
+                            <path
+                                d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg>
+                        {{pedido?.nombreCliente}}
+                    </span>
+                </span>
+
+
+            </div>
+            <div style="width: 26%;">
+                <span style="margin-top: 1vw;  display: flex; flex-direction: row;">
+                    <label
+                        style="text-align: center; margin-left: 70%; color:grey; border-style: solid; width: 40%; border-radius: 5px; border-width: 1px;">
+                        {{envio?.estado}}
+                    </label>
+                </span>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="row" style="margin-top: 0.7vw; font-size: 0.8vw;">
+        <div class="col ">
+            <div class="border-bottom" style="margin-bottom: 0.5vw; display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Ref. pedido
+                </div>
+                <div class="border-bottom" style="width: 60%;">{{envio?.idPedido}}</div>
+            </div>
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Fecha prevista de entrega
+                </div>
+                <div style="width: 60%;">
+                  {{envio?.fechaEntrega}}
+                </div>
+            </div>
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Peso
+                </div>
+                <div style="width: 60%;">
+                    {{envio?.peso}}
+                </div>
+            </div>
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Largo
+                </div>
+                <div style="width: 60%;">
+                  {{envio?.largo}}
+                </div>
+            </div>
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Alto
+                </div>
+                <div style="width: 60%;">
+                  {{envio?.alto}}
+                </div>
+            </div>
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Fondo
+                </div>
+                <div style="width: 60%;">
+                  {{envio?.fondo}}
+                </div>
+            </div>
+        </div>
+        <div class="col">
+
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+                    Método de envío
+                </div>
+                <div style="width: 60%;">
+                  {{envio?.metodoEnvio}}
+                </div>
+            </div>
+            <div class="border-bottom" style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 40%;">
+
+                    No. de seguimiento
+                </div>
+                <div style="width: 60%;">
+                  {{envio?.numeroSeguimiento}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-title"
+            style="height: 2vw; font-size: 0.8vw; align-items: center; display: flex; flex-direction: row; background-color:rgba(235, 232, 232, 0.746);">
+            <div style="width: 30%; ">Descripción</div>
+            <div style="width: 17%;text-align: center; ">Cant. pedida</div>
+            <div style="width: 17%;text-align: center;">Cant. enviada</div>
+            <div style="width: 17%;text-align: center;">Resto a enviar</div>
+        </div>
+        <div id="contend">
+            <div class="border-bottom" *ngFor="let det of pedido?.detallePedidos" id="datos"
+                style="display: flex; flex-direction: row; margin-bottom: 0.3vw;">
+                <div style="width: 30%;">
+                    <span style="color:rgb(195, 172, 144) ;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-box" viewBox="0 0 16 16">
+                            <path
+                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                        </svg>
+                    </span>
+                    {{det.producto.descripcionProducto}}
+                </div>
+                <div style="width: 17%;text-align: center;">{{det.cantidadPedida}}</div>
+                <div style="width: 17%;text-align: center;">{{det.cantidadEnviada}}</div>
+                <div style="width: 17%;text-align: center;">{{det.cantidadPedida - det.cantidadEnviada}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="margin-top: 1vw; display: flex; flex-direction: row;">
+        <button
+            style="height: 2vw; margin-left: 70%; width: 12%;color: white; background: rgba(214, 108, 228, 0.979); border-style: solid; border-width: 1px; text-align: center; border-radius: 5px; font-size: 0.8vw;" (click)="validar()">
+            VALIDAR
+        </button>
+
+        <button
+            style="height: 2vw; margin-left: 5%; width: 12%;color: rgb(0, 0, 0); background: rgba(231, 231, 231, 0.794); border-style: solid; border-width: 1px; text-align: center; border-radius: 5px; font-size: 0.8vw;" (click)="eliminar()">
+            ELIMINAR
+        </button>
+    </div>
+
+</mat-card>

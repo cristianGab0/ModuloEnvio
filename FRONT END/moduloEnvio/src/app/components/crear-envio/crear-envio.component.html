@@ -1,0 +1,189 @@
+<mat-card>
+    <div class="border-bottom">
+        <div class="row" style="margin-bottom: 1vw;">
+            <div style="width: 8%; justify-content: center; color: rgb(195, 193, 67);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor"
+                    class="bi bi-cart" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+            </div>
+            <div style="width: 60%; margin-left: 1vw; display: flex; ">
+                <span style="color: teal; font-size: 1vw; margin-top: 1vw; font-weight: bold;">Crear Envio</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 1vw;">
+      <form autocomplete="off" [formGroup]="formDatosEnvio">
+        <div style="width: 100%;">
+            <div style="margin-bottom: 0.5vw; display: flex; flex-direction: row;">
+                <div style="width: 25%; color: rgb(164, 79, 197); font-weight: bold;">
+                    Ref. pedido
+                </div>
+                <div style="width: 30%;color: rgb(100, 133, 35); ">
+                    <svg style="margin-bottom:0.4vw;" xmlns="http://www.w3.org/2000/svg" width="15" height="16"
+                        fill="currentColor" class="bi bi-file-earmark-post-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-5-.5H7a.5.5 0 0 1 0 1H4.5a.5.5 0 0 1 0-1zm0 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5z" />
+                    </svg>
+                    <span style="color: rgb(84, 84, 200);">
+                        {{pedido?.idpedido}}
+                    </span>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 0.5vw; display: flex; flex-direction: row;">
+                <div style="width: 25%; color: rgb(164, 79, 197); font-weight: bold;">
+                    Empresa
+                </div>
+                <div style="width: 30%;color: rgb(55, 98, 177); ">
+
+                    <svg style="margin-bottom:0.4vw;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-menu-button-wide-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1zm9.927.427A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0l-.396-.396zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <span style="color: rgb(84, 84, 200);">
+                        {{pedido?.nombreCliente}}
+                    </span>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div class="font-weight-bold" style="width: 25%;margin-top: 1vw;">
+                    Fecha prevista de entrega
+                </div>
+                <div style="width: 30%;">
+                    <mat-form-field style=" width: 100%; height: 0.5vw; font-size: 0.8vw; ">
+                        <input style="margin: auto;" matInput [matDatepicker]="picker"
+                        formControlName='fechaEntrega'>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 25%; margin-top: 1.7vw;">
+                    Nota(Publica)
+                </div>
+                <div style="width: 30%;">
+                    <mat-form-field style="width: 100%;">
+                        <textarea matInput formControlName="nota"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 25%; margin-top: 0.8vw;">
+                    Dirección
+                </div>
+                <div style="width: 30%;">
+                  <mat-form-field style="width: 100%;">
+                      <textarea matInput formControlName='direccion'></textarea>
+                  </mat-form-field>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 25%; margin-top: 1.4vw;">
+                    Peso
+                </div>
+                <div style="width: 30%;">
+                    <input style="width:30%; margin-right: 3%;" formControlName='peso'>
+                    <mat-form-field style="width: 67%;">
+                        <mat-select>
+                            <mat-option *ngFor="let tipo of tipoPeso" value="{{tipo.desc}}"
+                            (onSelectionChange)="seleccionarTipoPeso(tipo.id)" required>
+                                {{tipo.desc}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 25%; margin-top: 1.3vw;">
+                    Largo x Alto x Fondo
+                </div>
+                <div style="width: 30%;">
+                    <input style="width:17%; margin-right: 2%;" formControlName='largo'>
+                    x
+                    <input style="width:17%; margin-right: 2%; margin-left: 2%;" formControlName='alto'>
+                    x
+                    <input style="width:17%; margin-right: 2%; margin-left: 2%;" formControlName='fondo'>
+                    <mat-form-field style="width: 25%;">
+                        <mat-select>
+                            <mat-option *ngFor="let tipo of tipoDimension" value="{{tipo.desc}}"
+                            (onSelectionChange)="seleccionarTipoDimension(tipo.id)" required>
+                                {{tipo.desc}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 25%; margin-top: 1.3vw;">
+                    Método de envio
+                </div>
+                <div style="width: 30%;">
+                    <mat-form-field style="width: 100%;">
+                        <mat-select>
+                            <mat-option *ngFor="let opcion of metodoEnvio" value="{{opcion.name}}"  (onSelectionChange)="seleccionarMetodoEnvio(opcion.name)" required>
+                                {{opcion.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div style="margin-bottom: 0.5vw;display: flex; flex-direction: row;">
+                <div style="width: 25%; margin-top: 0.3vw;">
+                    No. de seguimiento
+                </div>
+                <div style="width: 30%;">
+                    <input style="width: 100%;" formControlName='numeroSeguimiento'>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+        <div class="card-title"
+            style="height: 2vw; font-size: 1vw; align-items: center; display: flex; flex-direction: row; background-color:rgba(235, 232, 232, 0.746);">
+            <div style="width: 30%; ">Descripción</div>
+            <div style="width: 24%;text-align: center;">Cant. pedida</div>
+            <div style="width: 23%;text-align: center;">Cant. enviada</div>
+            <div style="width: 23%;text-align: center;">Cant. a enviar</div>
+        </div>
+        <div id="contend">
+            <div class="border-bottom" *ngFor="let det of pedido?.detallePedidos" id="datos"
+                style="display: flex; flex-direction: row; margin-bottom: 0.3vw;">
+                <div style="width: 30%;">
+                    <span style="color:rgb(195, 172, 144) ;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-box" viewBox="0 0 16 16">
+                            <path
+                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                        </svg>
+                    </span>
+                    {{det.producto.descripcionProducto}}
+                </div>
+                <div style="width: 24%;text-align: center;">{{det.cantidadPedida}}</div>
+                <div style="width: 23%;text-align: center;">{{det.cantidadEnviada}}</div>
+                <div style="width: 23%;text-align: center;">
+                  <input style="width: 30%;"
+                  (change)="seleccionarCantidadEnviar(det.id,$event)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="margin-top: 1vw; display: flex; flex-direction: row;">
+
+        <button style="height: 2vw; margin-left: 25%; width: 20%;color: white; background: rgba(214, 108, 228, 0.979); border-style: solid; border-width: 1px; text-align: center; border-radius: 5px; font-size: 0.8vw;" (click)="crearEnvio()" [disabled]="!validForm()">
+          CREAR
+        </button>
+        <button
+            style="height: 2vw; margin-left: 5%; width: 20%;color: white; background: rgba(214, 108, 228, 0.979); border-style: solid; border-width: 1px; text-align: center; border-radius: 5px; font-size: 0.8vw;" (click)="anularEnvio()">
+            ANULAR
+        </button>
+    </div>
+
+</mat-card>
