@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.gt.microservicios.eurka.ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.204 s - in com.gt.microservicios.eurka.ApplicationTests

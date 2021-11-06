@@ -1,0 +1,9 @@
+com\gt\microservicios\app\envios\MicroservicioEnviosApplication.class
+com\gt\microservicios\app\envios\models\entity\Envio.class
+com\gt\microservicios\app\envios\controllers\EnviosController.class
+com\gt\microservicios\app\envios\services\EnvioService.class
+com\gt\microservicios\app\envios\models\entity\Pesos.class
+com\gt\microservicios\app\envios\models\entity\Dimensiones.class
+com\gt\microservicios\app\envios\models\repository\EnvioRepository.class
+com\gt\microservicios\app\envios\dto\EnvioDto.class
+com\gt\microservicios\app\envios\services\EnvioServiceImp.class
