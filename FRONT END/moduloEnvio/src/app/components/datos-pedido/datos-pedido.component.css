@@ -1,0 +1,6 @@
+.selec:hover{
+    font-weight: bold;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+}

@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-title"
+        style="height: 2vw; font-size: 1vw; align-items: center; display: flex; flex-direction: row; background-color:rgba(235, 232, 232, 0.746);">
+
+        <div style="width: 2%; margin-left: 1vw; color: rgb(132, 160, 83);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-cart"
+                viewBox="0 0 16 16">
+                <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+        </div>
+        <div style="width: 92%; margin-left: 1vw; color: rgb(52, 181, 184);">Listado de Envios</div>
+        <div style="width: 4%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                <path
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+            </svg>
+        </div>
+    </div>
+    <div id="contend">
+        <div class="border-bottom" id="datos" style="display: flex; flex-direction: row;border-radius: 8px; margin-bottom: 0.3vw; font-weight: bold !important; background-color: rgb(196, 238, 172);">
+            <div style="width: 25%; margin-left: 0.5vw;">Id Envio</div>
+            <div style="width: 25%;text-align: center;">Nombre Cliente</div>
+            <div style="width: 25%;text-align: center;">Fecha</div>
+            <div style="width: 25%;text-align: center;">Estado</div>
+        </div>
+        <div class="border-bottom seleccion" *ngFor="let e of envios" id="datos"
+            style="display: flex; flex-direction: row; margin-bottom: 0.3vw;" (click)="onverDatosPedidos(e)">
+            <div style="width: 25%; margin-left: 0.5vw;">
+                <span style="color:rgb(195, 172, 144) ;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </span>
+                {{e.idenvio}}
+            </div>
+            <div style="width: 25%;text-align: center;">
+                <svg style="margin-bottom:0.4vw;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-menu-button-wide-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1zm9.927.427A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0l-.396-.396zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+                </svg>
+                {{e.nombreCliente}}
+            </div>
+            <div style="width: 25%;text-align: center;">{{e.fechaEntrega}}</div>
+            <div style="width: 25%;text-align: center;">
+                <span style="border-radius: 5px; background-color: rgb(155, 154, 154); color: white;">
+                  {{e.estado}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

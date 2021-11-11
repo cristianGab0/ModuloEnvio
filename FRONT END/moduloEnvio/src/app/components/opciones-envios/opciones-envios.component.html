@@ -1,0 +1,11 @@
+<mat-card>
+  <div class="principal">Envios</div>
+  <div class="rama" (click)="onListadoPedidos()">
+    Nuevo envio
+  </div>
+
+  <div>
+    <div class="rama" (click)="this.onListadoEnvios('Borrador')">Borrador</div>
+    <div class="rama" (click)="this.onListadoEnvios('Validado')">Validado</div>
+  </div>
+</mat-card>
